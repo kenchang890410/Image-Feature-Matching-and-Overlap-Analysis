@@ -2,15 +2,13 @@
 
 這個 Python 程式是一個基於電腦視覺 (Computer Vision) 的分析工具，用於測量兩張影像之間的重疊程度 (Overlap)，並評估影像配準的準確性。
 
-程式中使用了 SIFT (尺度不變特徵轉換) 特徵偵測和 FLANN，計算出將一張影像轉換到另一張影像平面所需的單應性矩陣 (Homography Matrix)，最終輸出重疊的百分比和配準誤差。
+程式中使用了 SIFT (尺度不變特徵轉換) 特徵偵測和 FLANN (Fast Library for Approximate Nearest Neighbors)，計算出將一張影像轉換到另一張影像平面所需的單應性矩陣 (Homography Matrix)，最終輸出重疊的百分比和配準誤差。
 
 ## 核心功能與技術
 
 程式首先進行特徵點偵測，採用 SIFT 演算法來提取兩張影像中的關鍵點和描述子。
 
-隨後，使用高效的 FLANN (Fast Library for Approximate Nearest Neighbors) 匹配器。
-
-配合 K-Nearest Neighbors (KNN) 算法，找到最佳的匹配點。
+隨後，使用 FLANN 匹配器，配合 K-Nearest Neighbors (KNN) 演算法，找到最佳的匹配點。
 
 獲得高品質的匹配點後，使用 RANSAC (Random Sample Consensus) 演算法來計算單應性矩陣。
 
