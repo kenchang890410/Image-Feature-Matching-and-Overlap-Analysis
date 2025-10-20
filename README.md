@@ -2,7 +2,7 @@
 
 這個 Python 程式是一個基於電腦視覺 (Computer Vision) 的分析工具，用於測量兩張影像之間的重疊程度 (Overlap)，並評估影像配準的準確性。
 
-程式中使用了 SIFT 特徵偵測和 FLANN，計算出將一張影像轉換到另一張影像平面所需的單應性矩陣 (Homography)，最終輸出重疊的百分比和配準誤差。
+程式中使用了 SIFT 特徵偵測和 FLANN，計算出將一張影像轉換到另一張影像平面所需的單應性矩陣 (Homography Matrix)，最終輸出重疊的百分比和配準誤差。
 
 ## 核心功能與技術
 
@@ -12,7 +12,7 @@
 
 配合 K-Nearest Neighbors (KNN) 算法，找到最佳的匹配點。
 
-獲得高品質的匹配點後，使用 RANSAC (Random Sample Consensus) 演算法來計算單應性矩陣 (Homography Matrix)。
+獲得高品質的匹配點後，使用 RANSAC (Random Sample Consensus) 演算法來計算單應性矩陣。
 
 單應性矩陣能將第二張影像的座標系映射到第一張影像的座標系上。這個步驟是影像配準的關鍵。
 
